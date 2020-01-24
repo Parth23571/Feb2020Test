@@ -1,0 +1,19 @@
+package com.stc.Feb2020.com.stc.Feb2020.sp;
+
+import org.testng.annotations.Test;
+
+public class InvokeApp {
+  @Test
+  public void f() {
+	  try
+	  {
+		  
+		  
+	  }
+	  
+	  catch(Exception e)
+	  {
+		  System.out.println(e.getMessage());
+	  }
+  }
+}

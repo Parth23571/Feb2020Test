@@ -1,0 +1,39 @@
+package com.stc.Feb2020.com.stc.Feb2020.sp;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class InvokeApp {
+  @Test
+  public void f() {
+	  try
+	  {
+		  
+		  WebDriverManager.chromedriver().setup();;
+		  
+		  WebDriver driver=new ChromeDriver();
+		  driver.get("http://www.google.com");
+		  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		  
+		  driver.findElement(By.name("q")).sendKeys("Testing");
+		  driver.manage().window().maximize();
+		  driver.manage()driver.navigate().refresh();
+		  driver.findElement(By.name("btnK")).click();
+		 System.out.println("Clicked - DONE");
+		 
+		 
+	  }
+	  
+	  catch(Exception e)
+	  {
+		  System.out.println(e.getMessage());
+	  }
+  }
+}

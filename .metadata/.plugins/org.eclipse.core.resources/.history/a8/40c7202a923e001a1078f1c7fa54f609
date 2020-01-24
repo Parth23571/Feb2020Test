@@ -1,0 +1,36 @@
+package com.stc.Feb2020.com.stc.Feb2020.sp;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class InvokeApp {
+  @Test
+  public void f() {
+	  try
+	  {
+		  
+		  WebDriverManager.chromedriver().setup();;
+		  
+		  WebDriver driver=new ChromeDriver();
+		  driver.get("http://172.22.155.2/");
+		  driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		  
+		 driver.findElement(By.id("txtBxUserID")).sendKeys(Keys.SHIFT,"satish.pawal@consilio.com");
+		 driver.findElement(By.id("txtBxUserPass")).sendKeys("");
+		 
+		 
+	  }
+	  
+	  catch(Exception e)
+	  {
+		  System.out.println(e.getMessage());
+	  }
+  }
+}
